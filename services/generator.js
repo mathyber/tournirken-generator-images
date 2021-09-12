@@ -71,7 +71,8 @@ async function generator({firstUser = '', secondUser = '', n1 = '', n2 = ''}) {
 
     const image = await nodeHtmlToImage({
         html: html,
-        content: {firstUser: firstUser, secondUser: secondUser, n1: n1, n2: n2}
+        content: {firstUser: firstUser, secondUser: secondUser, n1: n1, n2: n2},
+        puppeteerArgs: { args: ['--no-sandbox'] }
     });
 
     return image;
